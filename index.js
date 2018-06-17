@@ -1,4 +1,5 @@
 var button = document.querySelector('button');
+var body = document.querySelector('body');
 
 Object.prototype.on = function () {
 	var args = Array.prototype.slice.call(arguments);
@@ -29,4 +30,8 @@ button.on('mouseover', function (e) {
 	console.log('Button mouseover');
 });
 
-var events = button.getEventListeners();
+var btnEvents = button.getEventListeners();
+
+if (btnEvents[0] && body.offsetWidth < 700) {
+	console.log('CLICK!!!');
+}
